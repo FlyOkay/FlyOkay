@@ -1,51 +1,45 @@
 
 body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: #000;
-  color: white;
-  font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
-canvas#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  margin-top: 20vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.contact-buttons {
-  margin-top: 30px;
+.button-container {
+    margin-top: 20px;
 }
 
 .btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  border: 2px solid white;
-  border-radius: 50px;
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-/* 按钮悬停只放大 */
 .btn:hover {
-  transform: scale(1.2);
+    transform: scale(1.1);
 }

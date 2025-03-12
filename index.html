@@ -2,23 +2,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FlyOkay | 个人作品集</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>FlyOkay 个人作品展示</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="background"></canvas>
+    <div id="particles-js"></div>
 
-  <div class="content">
-    <h1>Welcome to FlyOkay</h1>
-    <p>个人作品集展示</p>
-
-    <div class="contact-buttons">
-      <a href="tel:+123456789" class="btn">📞 电话</a>
-      <a href="mailto:test@example.com" class="btn">📧 邮件</a>
+    <div class="content">
+        <h1>Welcome to FlyOkay</h1>
+        <p>个人作品集展示</p>
+        <div class="button-container">
+            <a href="tel:123456789" class="btn">📞 电话</a>
+            <a href="mailto:example@mail.com" class="btn">📧 邮件</a>
+            <a href="portfolio-1.pdf" class="btn" target="_blank">📝 作品集一</a>
+            <a href="portfolio-2.pdf" class="btn" target="_blank">📝 作品集二</a>
+            <a href="resume-yuanfei.pdf" class="btn" target="_blank">📄 简历</a>
+        </div>
     </div>
-  </div>
 
-  <script src="particles.js"></script>
+    <script src="particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles.js loaded.');
+        });
+    </script>
 </body>
 </html>
