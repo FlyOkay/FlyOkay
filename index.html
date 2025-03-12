@@ -6,11 +6,7 @@
   <title>袁飞 | 简历与作品集</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -18,36 +14,37 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-      background: radial-gradient(circle at center, rgba(0, 0, 50, 0.7), #000);
+      background: radial-gradient(circle at center, rgba(12, 55, 193, 1), rgba(0, 0, 0, 0.95));
       color: white;
       text-align: center;
+      padding: 20px;
       position: relative;
-      cursor: none;
+      cursor: default;
+      overflow: hidden;
     }
 
     h1 {
       font-size: 3.2rem;
       margin-bottom: 10px;
       font-weight: 800;
-      letter-spacing: 3px;
-      text-shadow: 0 0 15px rgba(0, 140, 255, 0.7);
+      letter-spacing: 2px;
+      text-shadow: 0 4px 20px rgba(12, 55, 193, 0.8);
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-bottom: 30px;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.95);
     }
 
     .button {
       display: inline-block;
-      padding: 15px 45px;
-      margin: 15px;
-      font-size: 1.1rem;
+      padding: 15px 50px;
+      margin: 18px;
+      font-size: 1.15rem;
       color: white;
-      background: rgba(0, 140, 255, 0.1);
-      border: 2px solid rgba(0, 140, 255, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.6);
       border-radius: 50px;
       text-decoration: none;
       backdrop-filter: blur(10px);
@@ -55,10 +52,10 @@
     }
 
     .button:hover {
-      background: rgba(0, 140, 255, 0.8);
-      color: #fff;
+      background: white;
+      color: #333;
       transform: scale(1.08);
-      box-shadow: 0 0 20px rgba(0, 140, 255, 0.8);
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
     }
 
     .social-links {
@@ -67,18 +64,19 @@
 
     .social-links a {
       margin: 0 15px;
-      color: rgba(0, 140, 255, 0.8);
-      font-size: 2rem;
+      color: rgba(12, 55, 193, 0.9);
+      font-size: 2.2rem;
       text-decoration: none;
       transition: color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
     }
 
     .social-links a:hover {
-      color: #fff;
+      color: white;
       transform: scale(1.3);
     }
 
-    /* 微信弹窗样式 */
+    /* 微信弹窗 */
     .wechat-popup {
       display: none;
       position: fixed;
@@ -86,13 +84,14 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: rgba(0, 0, 0, 0.9);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0,140,255,0.5);
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 0 30px rgba(12, 55, 193, 0.8);
+      text-align: center;
     }
 
     .wechat-popup img {
-      width: 250px;
+      width: 240px;
       height: auto;
       border-radius: 8px;
     }
@@ -100,7 +99,7 @@
     .wechat-popup span {
       display: block;
       color: white;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .overlay {
@@ -110,36 +109,48 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.5);
     }
 
     footer {
       position: absolute;
-      bottom: 20px;
+      bottom: 15px;
       width: 100%;
       text-align: center;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.7);
     }
 
-    /* 动态光标背景 */
+    /* 鼠标动态科技光圈 */
     #cursor-light {
       position: fixed;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(0,140,255,0.3), transparent 70%);
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(12, 55, 193, 0.7), rgba(12, 55, 193, 0.2), transparent 80%);
       border-radius: 50%;
       pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.3s ease;
-      opacity: 0.6;
+      mix-blend-mode: screen;
+      filter: blur(100px);
+      opacity: 0.8;
+      z-index: 0;
+      transition: transform 0.3s ease-out;
+    }
+
+    /* 鼠标跟随粒子 */
+    .particle {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(12, 55, 193, 0.5);
+      filter: blur(8px);
+      pointer-events: none;
       z-index: 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- 动态光标背景 -->
+  <!-- 光圈 -->
   <div id="cursor-light"></div>
 
   <div style="z-index: 1;">
@@ -154,11 +165,11 @@
       <a href="mailto:y1217231459@gmail.com" title="邮箱">📧</a>
       <a href="tel:17623014902" title="电话">📞</a>
       <a id="wechat-btn" title="微信">💬</a>
-      <a href="https://github.com/你的GitHub用户名" target="_blank" title="GitHub">💻</a>
+      <a href="https://github.com/你的GitHub用户名" target="_blank">💻</a>
     </div>
   </div>
 
-  <!-- 微信二维码弹窗 -->
+  <!-- 微信弹窗 -->
   <div class="overlay" id="overlay"></div>
   <div class="wechat-popup" id="wechat-popup">
     <img src="./wechat-qr.jpg" alt="微信二维码">
@@ -167,27 +178,49 @@
 
   <footer>© 2025 袁飞. 保留所有权利。</footer>
 
+  <!-- 动态科技鼠标 -->
   <script>
+    const cursorLight = document.getElementById('cursor-light');
+    let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
+
+    // 粒子池
+    const particles = [];
+    function createParticle(x, y) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      document.body.appendChild(particle);
+      particle.style.left = x + 'px';
+      particle.style.top = y + 'px';
+
+      setTimeout(() => { particle.remove(); }, 1000); // 粒子生命周期
+    }
+
+    // 监听鼠标
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      createParticle(mouseX, mouseY); // 每次移动创建粒子
+    });
+
+    // 光圈平滑跟随 + 呼吸动态
+    function animate() {
+      posX += (mouseX - posX) * 0.12;
+      posY += (mouseY - posY) * 0.12;
+      const time = Date.now() * 0.005;
+      const scale = 1 + Math.sin(time) * 0.2;
+      cursorLight.style.left = (posX - 125) + 'px';
+      cursorLight.style.top = (posY - 125) + 'px';
+      cursorLight.style.transform = `scale(${scale})`;
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // 微信弹窗逻辑
     const wechatBtn = document.getElementById('wechat-btn');
     const popup = document.getElementById('wechat-popup');
     const overlay = document.getElementById('overlay');
-
-    wechatBtn.addEventListener('click', () => {
-      popup.style.display = 'block';
-      overlay.style.display = 'block';
-    });
-
-    overlay.addEventListener('click', () => {
-      popup.style.display = 'none';
-      overlay.style.display = 'none';
-    });
-
-    // 动态光标效果
-    const cursorLight = document.getElementById('cursor-light');
-    document.addEventListener('mousemove', (e) => {
-      cursorLight.style.left = e.clientX + 'px';
-      cursorLight.style.top = e.clientY + 'px';
-    });
+    wechatBtn.addEventListener('click', () => { popup.style.display = overlay.style.display = 'block'; });
+    overlay.addEventListener('click', () => { popup.style.display = overlay.style.display = 'none'; });
   </script>
 
 </body>
