@@ -88,6 +88,7 @@
       border-radius: 14px;
       box-shadow: 0 0 30px rgba(12, 55, 193, 0.8);
       text-align: center;
+      z-index: 9999;
     }
 
     .wechat-popup img {
@@ -110,6 +111,7 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.5);
+      z-index: 9998;
     }
 
     footer {
@@ -184,7 +186,6 @@
     let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
 
     // 粒子池
-    const particles = [];
     function createParticle(x, y) {
       const particle = document.createElement('div');
       particle.className = 'particle';
@@ -215,7 +216,7 @@
     }
     animate();
 
-    // 微信弹窗逻辑
+    // 微信弹窗
     const wechatBtn = document.getElementById('wechat-btn');
     const popup = document.getElementById('wechat-popup');
     const overlay = document.getElementById('overlay');
