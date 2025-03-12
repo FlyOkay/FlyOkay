@@ -1,175 +1,24 @@
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>袁飞 | 简历与作品集</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #0d0d0d;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      overflow: hidden;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      font-weight: 800;
-      letter-spacing: 3px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 50px;
-      margin: 15px;
-      font-size: 1.1rem;
-      color: white;
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid white;
-      border-radius: 50px;
-      text-decoration: none;
-      backdrop-filter: blur(10px);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .button:hover {
-      color: white;
-      background: linear-gradient(135deg, #007bff, #00d4ff);
-      border-color: transparent;
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
-    }
-
-    .social-links {
-      margin-top: 50px;
-    }
-
-    .social-links a {
-      margin: 0 15px;
-      color: white;
-      font-size: 2rem;
-      text-decoration: none;
-      transition: all 0.4s ease;
-      position: relative;
-    }
-
-    .social-links a:hover {
-      color: transparent;
-      background: linear-gradient(135deg, #007bff, #00d4ff);
-      -webkit-background-clip: text;
-      transform: scale(1.3);
-    }
-
-    .wechat-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.95);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    }
-
-    .wechat-popup img {
-      width: 260px;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .wechat-popup span {
-      display: block;
-      color: white;
-      margin-top: 12px;
-      font-size: 1rem;
-    }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-    }
-
-    footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-  </style>
+  <title>FlyOkay | 个人作品集</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="background"></canvas>
 
-  <div>
-    <h1>袁飞</h1>
-    <p>简历与作品集展示</p>
+  <div class="content">
+    <h1>Welcome to FlyOkay</h1>
+    <p>个人作品集展示</p>
 
-    <a href="./resume-yuanfei.pdf" class="button" target="_blank">查看我的简历</a>
-    <a href="./portfolio-attachment1.pdf" class="button" target="_blank">作品集（附件1）</a>
-    <a href="./portfolio-attachment2.pdf" class="button" target="_blank">作品集（附件2）</a>
-
-    <div class="social-links">
-      <a href="mailto:y1217231459@gmail.com" title="邮箱">📧</a>
-      <a href="tel:17623014902" title="电话">📞</a>
-      <a id="wechat-btn" title="微信">💬</a>
-      <a href="https://github.com/你的GitHub用户名" target="_blank" title="GitHub">💻</a>
+    <div class="contact-buttons">
+      <a href="tel:+123456789" class="btn">📞 电话</a>
+      <a href="mailto:test@example.com" class="btn">📧 邮件</a>
     </div>
   </div>
 
-  <!-- 微信二维码弹窗 -->
-  <div class="overlay" id="overlay"></div>
-  <div class="wechat-popup" id="wechat-popup">
-    <img src="./wechat-qr.jpg" alt="微信二维码">
-    <span>扫一扫加我微信</span>
-  </div>
-
-  <footer>© 2025 袁飞. 保留所有权利。</footer>
-
-  <script>
-    const wechatBtn = document.getElementById('wechat-btn');
-    const popup = document.getElementById('wechat-popup');
-    const overlay = document.getElementById('overlay');
-
-    wechatBtn.addEventListener('click', () => {
-      popup.style.display = 'block';
-      overlay.style.display = 'block';
-    });
-
-    overlay.addEventListener('click', () => {
-      popup.style.display = 'none';
-      overlay.style.display = 'none';
-    });
-  </script>
-
+  <script src="particles.js"></script>
 </body>
 </html>
