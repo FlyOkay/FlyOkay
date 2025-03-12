@@ -44,6 +44,15 @@ p {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
+}
+
+.button-group.large {
+    margin-bottom: 30px;
+}
+
+.button-group.small {
+    margin-top: 10px;
 }
 
 .button-group.large a {
@@ -59,6 +68,7 @@ p {
 .button-group.large a:hover {
     background: linear-gradient(45deg, #00aaff, #0044ff);
     border: none;
+    border-radius: 30px;
 }
 
 .button-group.small a {
@@ -66,15 +76,21 @@ p {
     font-size: 1em;
     border: none;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
     text-decoration: none;
     color: white;
     transition: 0.3s;
+    background: transparent;
 }
 
 .button-group.small a:hover {
     background: linear-gradient(45deg, #00aaff, #0044ff);
+    border-radius: 20px;
 }
+
+.button-group a:active {
+    transform: scale(0.95);
+}
+
 .blob {
     position: absolute;
     width: 300px;
